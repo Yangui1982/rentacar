@@ -21,7 +21,7 @@ User.create!(
 15.times do
   car = Car.new(
     brand: Faker::Vehicle.make_and_model,
-    price: (200..1500).sample
+    price: (200..1500).to_a.sample
   )
   car.save!
 end
