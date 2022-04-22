@@ -13,7 +13,7 @@ User.destroy_all
 User.create!(
   first_name: 'Marcel',
   last_name: 'Patulacci',
-  nick_name: 'Marcelou',
+  nickname: 'Marcelou',
   email: 'marcel.patulacci@gmail.com',
   password: 'azerty'
 )
