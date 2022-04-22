@@ -16,7 +16,7 @@
       <div class="lists-car">
         <% @cars.each do |car| %>
           <li>
-            <div class="card-category card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= castle.photo.attached? ? cl_image_path(castle.photo.key) : asset_path('2ch.jpg') %>)">
+            <div class="card-category card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= car.photo.attached? ? cl_image_path(car.photo.key) : asset_path('2ch.jpg') %>)">
               <h2 class="categorie"><%= link_to car.brand, car, class: 'car-name' %> </h2>
               <p><%= car.price %></p>
           </li>
