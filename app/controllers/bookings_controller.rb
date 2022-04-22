@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_car, only: [:index, :show]
+  before_action :set_car, only: [:index, :show, :create, :new]
   before_action :set_booking, except: [:index, :new, :create]
   def index
     @bookings = Booking.all
@@ -11,10 +11,10 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    @booking.car = @Car
+    @booking.car = @car
     @booking.user = current_user
     if @booking.save
-      redirect_to  car_booking_path(@car, @booking)
+      redirect_to car_booking_path(@car, @booking)
     else
       render :new
     end
