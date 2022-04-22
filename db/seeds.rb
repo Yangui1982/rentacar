@@ -17,3 +17,11 @@ User.create!(
   email: 'marcel.patulacci@gmail.com',
   password: 'azerty'
 )
+
+15.times do
+  car = Car.new(
+    brand: Faker::Vehicle.make_and_model,
+    price: (200..1500).sample
+  )
+  car.save!
+end
